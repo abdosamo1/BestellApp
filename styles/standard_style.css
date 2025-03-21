@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    box-sizing: border-box;
+    font-family: "Raleway", serif;
+    font-style: normal;
+    font-weight: 200;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+a:hover {
+    color: #f46105;
+}
+
