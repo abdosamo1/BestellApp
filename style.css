@@ -120,7 +120,7 @@ main {
     width: 100%;
     font-size: 24px;
     padding-bottom: 32px;
-    background: #fbf0f0;
+    background: #FBF0DA;
 }
 .restaurant-img{
     width: 100%;
@@ -152,7 +152,7 @@ h1{
     margin: 16px;
 }
 .Pizza-Item:hover{
-    background: #fbf0f0;
+    background: #FBF0DA;
 }
 .item-description{
     display: flex;
@@ -160,7 +160,7 @@ h1{
     gap: 8px;
     font-size: 16px;
     padding: 8px;
-    width: 100%;
+    width: 80%;
     align-items: flex-start;
 }
 .item-description p{
@@ -191,6 +191,11 @@ h2{
     top: 0;
     position: relative;
     overflow : hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
 }
 #cart-contents.visible{
     width: 30%;

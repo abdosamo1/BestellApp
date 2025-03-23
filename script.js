@@ -1,6 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-    renderRestaurantMenu();
-});
+
+let cart = document.getElementById("cart-contents");
+
+function renderRestaurantMenu() {
+    displayPizzas()
+}
 
 function toggleNavBar() {
     
@@ -9,15 +12,16 @@ function toggleNavBar() {
 }
 
 function toggleCart() {
-    let cart = document.getElementById("cart-contents");
     cart.classList.toggle("visible");
 }
 
-function renderRestaurantMenu() {
-
-    let restaurantMenu = document.getElementById("restaurant-menu");
-    for (let pizzaNumber = 0; pizzaNumber < pizzas.length; pizzaNumber++) {
-        let pizza = pizzas[pizzaNumber]
-        restaurantMenu.innerHTML += addPizza(pizza);
-    }
+function addToCart() {
+    cart.classList.add("visible");
+    cart.innerHTML += `<div class"added-to-cart">
+                            <p></p>
+                       </div>`;
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    renderRestaurantMenu();
+});
