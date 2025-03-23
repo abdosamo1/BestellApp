@@ -1,4 +1,4 @@
-function pizzaItem(pizza) {
+function addPizza(pizza) {
 return `
         <div class="Pizza-Item">
             <div class="item-description">

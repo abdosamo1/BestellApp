@@ -16,8 +16,8 @@ function toggleCart() {
 function renderRestaurantMenu() {
 
     let restaurantMenu = document.getElementById("restaurant-menu");
-    for (let i = 0; i < pizzas.length; i++) {
-        let pizza = pizzas[i]
-        restaurantMenu.innerHTML += pizzaItem(pizza);
+    for (let pizzaNumber = 0; pizzaNumber < pizzas.length; pizzaNumber++) {
+        let pizza = pizzas[pizzaNumber]
+        restaurantMenu.innerHTML += addPizza(pizza);
     }
 }
