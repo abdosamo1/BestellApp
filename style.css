@@ -32,7 +32,6 @@ nav {
 }
 ul li {
     list-style: none;
-    margin-bottom: 16px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -42,14 +41,13 @@ ul li {
 }
 
 .material-icons {
-    font-size: 32px;
+    font-size: 8px;
     transition: transform 0.5s ease-in-out;
     background: white;
     border-radius: 50%;
     color: black;
     padding: 8px;
-    margin-bottom: 16px;
-    border: 2px solid transparent;
+
 }
 
 .material-icons:hover {
@@ -67,21 +65,26 @@ ul li {
     width: 200px;
     transition: right 0.5s ease-in-out;
     white-space: nowrap;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 #links.visible {
     right:0;
+    width: 40%;
 }
 #links ul {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    display: flex;
 }
 #links.visible ul {
     opacity: 1;
 }
 #links a{
-    display: flex;
-    justify-content: flex-end;
     margin-right: 8px;
 }
 
