@@ -19,7 +19,7 @@
 
 <header id="home">
     <a href="#home">
-    <img class="logo" src="./images/Logo/Logo.png" alt="logo">
+        <img class="logo" src="./images/Logo/Logo.png" alt="logo">
     </a>
     <nav id="navbar">
         <a class="cart-icon" onclick="toggleCart()">
@@ -40,12 +40,14 @@
 </header>
 
 <main>
-    <div class="restaurant-menu">
-        <img class="restaurant-img" src="./images/bella-italia.png" alt="restaurant-logo">
-        <img class="restaurant-logo" src="./images/Logo/RestaurantLogo.png" alt="logo">
-        <h1>Pizzeria Bella Italia</h1>
-        <p>Frische Pizza, direkt zu dir nach Hause! 🍕✨ <br>
-            Jetzt bestellen und genießen!</p>
+    <div class="restaurant">
+        <div class="restaurant-description">
+            <img class="restaurant-img" src="./images/bella-italia.png" alt="restaurant-logo">
+            <img class="restaurant-logo" src="./images/Logo/RestaurantLogo.png" alt="logo">
+            <h1>Pizzeria Bella Italia</h1>
+            <p class="description">Frische Pizza, direkt zu dir nach Hause! 🍕✨ <br>
+                Jetzt bestellen und genießen!</p>
+        </div>
         <div id="restaurant-menu"></div>
     </div>
     <div id="cart-contents">
@@ -60,6 +62,7 @@
 <!-- script -->
 <script src="./scripts/Templates.js"></script>
 <script src="./script.js"></script>
+<script src="./scripts/Pizzeria.js"></script>
 
 
 </body>
