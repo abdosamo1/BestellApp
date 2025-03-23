@@ -16,7 +16,8 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    padding: 16px;
+    padding: 24px;
+    margin: 8px;
     height: 104px;
 }
 
@@ -44,10 +45,11 @@ ul li {
     font-size: 8px;
     transition: transform 0.5s ease-in-out;
     background: white;
+    border: 1px solid black;
     border-radius: 50%;
     color: black;
     padding: 8px;
-
+    margin-right: 8px;
 }
 
 .material-icons:hover {
@@ -57,22 +59,20 @@ ul li {
 #links {
     background: black;
     border-radius: 8px;
-    padding: 8px;
-    margin: 16px;
+    padding: 16px;
+    margin: 24px;
     position: fixed;
     top: 0;
-    right: -250px;
-    width: 200px;
-    transition: right .9s ease-in-out;
+    right: -650px;
+    transition: right .5s ease-in-out;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    width: 40%;
 }
-
 #links.visible {
     right:0;
-    width: 40%;
 }
 #links ul {
     opacity: 0;
@@ -151,6 +151,9 @@ h1{
     border-radius: 8px;
     margin: 16px;
 }
+.Pizza-Item:hover{
+    background: #fbf0f0;
+}
 .item-description{
     display: flex;
     flex-direction: column;
@@ -167,6 +170,7 @@ h2{
     color: #002035;
     font-weight: 100;
     font-size: 24px;
+    text-align: left;
 }
 
 .cart-icon{
