@@ -18,9 +18,16 @@
 <body>
 
 <header id="home">
+    <a href="#home">
     <img class="logo" src="./images/Logo/Logo.png" alt="logo">
+    </a>
     <nav id="navbar">
-        <a class="icon" onclick="toggleNavBar()"> <i class="material-icons">menu</i> </a>
+        <a class="cart-icon" onclick="toggleCart()">
+            <i class="material-icons">shopping_cart</i>
+        </a>
+        <a class="icon" onclick="toggleNavBar()">
+            <i class="material-icons">menu</i>
+        </a>
         <div id="links">
             <a onclick="toggleNavBar()"><i class="material-icons">close</i></a>
             <ul>
@@ -33,11 +40,20 @@
 </header>
 
 <main>
+    <div class="restaurant-menu">
+        <img class="restaurant-img" src="./images/bella-italia.png" alt="restaurant-logo">
+        <h1>Pizzeria Bella Italia</h1>
+        <p>Frische Pizza, direkt zu dir nach Hause! 🍕✨ <br>
+            Jetzt bestellen und genießen!</p>
+        <div id="restaurant-menu"></div>
+    </div>
+    <div id="cart-contents">
+        <a onclick="toggleCart()"><i class="material-icons cart-close">close</i></a>
+    </div>
 </main>
-
 <footer id="about">
-    <p>&copy; 2025 Book Store. <br>
-        All rights reserved.</p>
+    <p>&copy; 2025 Bestell App. <br>
+        All rights reserved...</p>
 </footer>
 
 <!-- script -->
