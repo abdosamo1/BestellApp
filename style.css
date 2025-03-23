@@ -150,7 +150,6 @@ h1{
     border: 2px solid black;
     border-radius: 8px;
     margin: 16px;
-    width: 100%;
 }
 .item-description{
     display: flex;
