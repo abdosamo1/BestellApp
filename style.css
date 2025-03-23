@@ -116,9 +116,18 @@ main {
     height: 200px;
     border-radius: 8px 8px 0 0;
 }
+.restaurant-logo{
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: 300px;
+
+}
 h1{
     color: orange;
     font-size: 32px;
+    margin-top: 48px;
 }
 .cart-icon{
     margin-right: 16px;
