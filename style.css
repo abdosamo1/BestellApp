@@ -97,7 +97,7 @@ main {
 }
 
 .d_none{
-    display: none !important;
+    display: none;
 }
 
 .restaurant{
@@ -183,15 +183,15 @@ h2{
     top: 16px;
     right: 10px;
 }
-#cart-contents{
+#cart-contents {
     background: black;
     border-radius: 8px;
-    height: 100%;
+    height: 96vh;
     width: 0;
     transition: width 0.5s ease-in-out;
-    top: 0;
-    position: relative;
-    overflow : hidden;
+    top: 2vh;
+    position: sticky;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -208,9 +208,6 @@ h2{
 
 .empty-cart{
     color: #c3c3c3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
     margin: 48px 16px;
     border: 2px solid #c3c3c3;

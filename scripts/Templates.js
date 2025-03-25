@@ -15,15 +15,15 @@ function addPizza(pizza , index) {
 }
 
 
-function addItemToCart(pizza) {
-    return `<div class="added-to-cart">
-                            <p>${pizza.name}:</p>
+function addItemToCart(item , itemNumber) {
+    return `<div class="added-to-cart" id="added-item${itemNumber}">
+                            <p>${item.name}:</p>
                             <div class="item-preis-amount">
                                 <div class="cart-icons">
                                       ${removeOneTemplate()} ${itemAmount} ${addOneTemplate()}
                                 </div>
-                                <span>Price: ${pizza.price} €</span>
-                                ${removeItemTemplate()}
+                                <span>Price: ${item.price} €</span>
+                                ${removeItemTemplate(itemNumber)}
                             </div>
                        </div>`
 }
@@ -40,8 +40,8 @@ function addOneTemplate() {
                 </a> `
 }
 
-function removeItemTemplate() {
-    return `<a onclick="">
-                    <i class="material-icons cart-icon">delete</i>
-                </a> `
+function removeItemTemplate(itemNumber) {
+    return `<a onclick="removeItem(${itemNumber})">
+               <i class="material-icons cart-icon">delete</i>
+            </a> `
 }
