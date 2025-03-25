@@ -15,7 +15,7 @@
 
     <title>BestellApp</title>
 </head>
-<body>
+<body onload="renderRestaurantMenu()">
 
 <header id="home">
     <a href="#home">
@@ -52,6 +52,8 @@
     </div>
     <div id="cart-contents">
         <a onclick="toggleCart()"><i class="material-icons cart-close">close</i></a>
+        <p class="empty-cart" id="empty-cart"> Dein Warenkorb ist noch leer,
+            <br> wähle leckere gerichte und geniesse dein Essen! </p>
     </div>
 </main>
 <footer id="about">

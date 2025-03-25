@@ -51,7 +51,6 @@ ul li {
     padding: 8px;
     margin-right: 8px;
 }
-
 .material-icons:hover {
     transform: scale(1.1);
 }
@@ -96,6 +95,11 @@ main {
     width: 100%;
     max-width: 1920px;
 }
+
+.d_none{
+    display: none !important;
+}
+
 .restaurant{
     background: white;
     border-radius: 8px;
@@ -173,13 +177,11 @@ h2{
     text-align: left;
 }
 
-.cart-icon{
-    margin-right: 16px;
-}
 .cart-close{
-    margin-top: 16px;
-    font-size: small;
     padding: 4px;
+    position: absolute;
+    top: 16px;
+    right: 10px;
 }
 #cart-contents{
     background: black;
@@ -187,7 +189,6 @@ h2{
     height: 100%;
     width: 0;
     transition: width 0.5s ease-in-out;
-    white-space: nowrap;
     top: 0;
     position: relative;
     overflow : hidden;
@@ -205,6 +206,53 @@ h2{
     height: 70%;
 }
 
+.empty-cart{
+    color: #c3c3c3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 48px 16px;
+    border: 2px solid #c3c3c3;
+    border-radius: 8px;
+    padding: 16px;
+}
+.added-to-cart{
+    margin-top: 48px;
+    font-size: 16px;
+    color: black;
+    background: white;
+    width: 80%;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+}
+.cart-icon{
+    font-size: x-small !important;
+    padding: 8px;
+    margin: 0;
+}
+.cart-icons{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.item-preis-amount {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.added-to-cart p{
+    text-align: left;
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+}
 
 footer {
     background-color: #002035;
