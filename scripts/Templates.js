@@ -28,14 +28,14 @@ function addItemToCart(item , itemNumber) {
                        </div>`
 }
 
-function removeOneTemplate() {
-    return `<a onclick="">
+function removeOneTemplate(itemNumber) {
+    return `<a onclick="removeOne(${itemNumber})">
                     <i class="material-icons cart-icon">remove</i>
                 </a> `
 }
 
-function addOneTemplate() {
-    return `<a onclick="">
+function addOneTemplate(itemNumber) {
+    return `<a onclick="addOne(${itemNumber})">
                     <i class="material-icons cart-icon">add</i>
                 </a> `
 }

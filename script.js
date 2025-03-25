@@ -45,3 +45,19 @@ function removeItem(itemNumber) {
     
 }
 
+function addOne(itemNumber){
+    let addedItem = document.getElementById(`added-item${itemNumber}`);
+
+    itemAmount++;
+    console.log(itemAmount);
+}
+
+function removeOne(itemNumber) {
+    let addedItem = document.getElementById(`added-item${itemNumber}`);
+
+    if (itemAmount === 1) {
+        removeItem();
+    } else {
+        itemAmount--;
+    }
+}
