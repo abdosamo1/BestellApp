@@ -21,11 +21,16 @@
     <a href="#home">
         <img class="logo" src="./images/Logo/Logo.png" alt="logo">
     </a>
+    <div class="menu-big-screen">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="mailto: abdo.samo1@gmail.com">Contact</a>
+    </div>
     <nav id="navbar">
         <a class="cart-icon" onclick="toggleCart()">
             <i class="material-icons">shopping_cart</i>
         </a>
-        <a class="icon" onclick="toggleNavBar()">
+        <a class="icon menu-icon" onclick="toggleNavBar()">
             <i class="material-icons">menu</i>
         </a>
         <div id="links">
@@ -54,6 +59,14 @@
         <a onclick="toggleCart()"><i class="material-icons cart-close">close</i></a>
         <p class="empty-cart" id="empty-cart"> Dein Warenkorb ist noch leer,
             <br> wähle leckere gerichte und geniesse dein Essen! </p>
+        <div id="cart-items-container"></div>
+        <div id="cart-total" class="cart-total d_none">
+            <hr>
+            <div class="total-price">
+                <span>Gesamt:</span>
+                <span id="total-price-amount">0.00 €</span>
+            </div>
+        </div>
     </div>
 </main>
 <footer id="about">

@@ -1,12 +1,11 @@
-let cart = document.getElementById("cart-contents");
+let cartItems = document.getElementById("cart-items-container");
 let navbar = document.getElementById("links");
-
+let cart = document.getElementById("cart-contents")
 
 function displayPizzas() {
     let restaurantMenu = document.getElementById("restaurant-menu");
-    for (let pizzaNumber = 0; pizzaNumber < pizzas.length; pizzaNumber++) {
-        let pizza = pizzas[pizzaNumber]
-        restaurantMenu.innerHTML += addPizza(pizza, pizzaNumber);
+    for (let pizza of pizzas) {
+        restaurantMenu.innerHTML += addPizza(pizza, pizzas.indexOf(pizza));
     }
 }
 
@@ -22,42 +21,102 @@ function toggleCart() {
     cart.classList.toggle("visible");
 }
 
-function addToCart(index) {
-    let pizza = pizzas[index];
-    let emptyCart= document.getElementById("empty-cart")
+function disableEmptyCart() {
+    let cartItems = cart.children.length;
+    let emptyCart = document.getElementById("empty-cart");
+    let cartTotal = document.getElementById("cart-total");
+
+    if (cartItems > 1) {
+        cart.classList.add("visible");
+        emptyCart.classList.add("d_none");
+        cartTotal.classList.remove("d_none");
+        updateTotalPrice(); 
+    }
+}
+
+function enableEmptyCart() {
+    let emptyCart = document.getElementById("empty-cart");
+    let cartTotal = document.getElementById("cart-total");
+    let cartItemsAmount = cartItems.children.length;
     
-    cart.classList.add("visible");
-    emptyCart.classList.add("d_none");
-    cart.innerHTML += addItemToCart(pizza, index);
+    if (cartItemsAmount < 1) {
+        cart.classList.remove("visible");
+        emptyCart.classList.remove("d_none");
+        cartTotal.classList.add("d_none");
+    }
+}
+
+function addToCart(index) {
+    disableEmptyCart();
+    let pizza = pizzas[index];
+    if (pizza.quantity > 0) {
+        pizza.quantity++;
+        updateCartItem(index);
+    } else {
+        pizza.quantity = 1;
+        cartItems.innerHTML += addItemToCart(pizza, index);
+    }
+    updateTotalPrice();
 }
 
 function removeItem(itemNumber) {
+    let pizza = pizzas[itemNumber];
     let addedItem = document.getElementById(`added-item${itemNumber}`);
+
+    pizza.quantity = 0;
     addedItem.remove();
-
-    let remainingItems = cart.children.length
-
-    if (remainingItems === 2) {
-        let emptyCart = document.getElementById("empty-cart")
-        cart.classList.remove("visible");
-        emptyCart.classList.remove("d_none");
-    }
-    
+    updateTotalPrice();
+    enableEmptyCart();
 }
 
-function addOne(itemNumber){
-    let addedItem = document.getElementById(`added-item${itemNumber}`);
+function addOne(itemNumber) {
+    let pizza = pizzas[itemNumber];
 
-    itemAmount++;
-    console.log(itemAmount);
+    pizza.quantity++;
+    updateCartItem(itemNumber);
+    updateTotalPrice();
 }
 
 function removeOne(itemNumber) {
-    let addedItem = document.getElementById(`added-item${itemNumber}`);
+    let pizza = pizzas[itemNumber];
 
-    if (itemAmount === 1) {
-        removeItem();
+    if (pizza.quantity > 1) {
+        pizza.quantity--;
+        updateCartItem(itemNumber);
     } else {
-        itemAmount--;
+        removeItem(itemNumber);
     }
+    updateTotalPrice();
+}
+
+function updateCartItem(itemNumber) {
+    updateQuantity(itemNumber);
+    updateItemPeris(itemNumber);
+}
+
+function updateQuantity(itemNumber) {
+    let cartIcons = document.getElementById(`cart-icons-${itemNumber}`);
+
+    cartIcons.innerHTML = showQuantity(itemNumber);
+}
+
+function updateItemPeris(itemNumber) {
+    let pizza = pizzas[itemNumber];
+    let itemTotalPreis = (pizza.price * pizza.quantity).toFixed(2);
+    let itemPreis = document.getElementById(`item-preis${itemNumber}`);
+
+    itemPreis.textContent = addPreis(itemTotalPreis);
+}
+
+function calculateTotal() {
+    let total = 0;
+    for (let pizza of pizzas) {
+        total += pizza.price * pizza.quantity;
+    }
+    return total.toFixed(2);
+}
+
+function updateTotalPrice() {
+    let totalPriceElement = document.getElementById("total-price-amount");
+    totalPriceElement.innerHTML = calculateTotal() + " €";
 }
