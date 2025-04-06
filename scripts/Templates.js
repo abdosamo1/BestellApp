@@ -14,12 +14,13 @@ function addPizza(pizza, index) {
 
 function addItemToCart(item, itemNumber) {
     return `<div class="added-to-cart" id="added-item${itemNumber}">
-                            <p>${item.name}:</p>
+                            <p>${item.name}:
+                                <span id="item-preis${itemNumber}">${addPreis(item.price)}</span>
+                            </p>
                             <div class="item-preis-amount">
                                 <div id="cart-icons-${itemNumber}" class="cart-icons">
                                     ${showQuantity(itemNumber)} 
                                 </div>
-                                <span id="item-preis${itemNumber}">${addPreis(item.price)}</span>
                                     ${removeItemBtn(itemNumber)}
                             </div>
                        </div>`
@@ -51,5 +52,5 @@ function showQuantity(itemNumber) {
 }
 
 function addPreis(preis) {
-    return `Price: ${preis} €`
+    return `${preis} €`
 }
