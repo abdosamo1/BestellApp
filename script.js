@@ -1,4 +1,4 @@
-let cartItems = document.getElementById("cart-items-container");
+let cartItems = document.getElementById("cart-items-container")
 let navbar = document.getElementById("links");
 let cart = document.getElementById("cart-contents")
 
@@ -13,41 +13,27 @@ function renderRestaurantMenu() {
     displayPizzas()
 }
 
-function toggleNavBar() {
-    navbar.classList.toggle("visible");
+function toggleVisibility(toggleItem) {
+    toggleItem.classList.toggle("visible");
 }
 
-function toggleCart() {
-    cart.classList.toggle("visible");
-}
-
-function disableEmptyCart() {
-    let cartItems = cart.children.length;
-    let emptyCart = document.getElementById("empty-cart");
-    let cartTotal = document.getElementById("cart-total");
-
-    if (cartItems > 1) {
-        cart.classList.add("visible");
-        emptyCart.classList.add("d_none");
-        cartTotal.classList.remove("d_none");
-        updateTotalPrice(); 
-    }
-}
-
-function enableEmptyCart() {
+function toggleEmptyCart() {
     let emptyCart = document.getElementById("empty-cart");
     let cartTotal = document.getElementById("cart-total");
     let cartItemsAmount = cartItems.children.length;
-    
-    if (cartItemsAmount < 1) {
-        cart.classList.remove("visible");
+
+    if (cartItemsAmount === 0) {
         emptyCart.classList.remove("d_none");
         cartTotal.classList.add("d_none");
+    } else {
+        emptyCart.classList.add("d_none");
+        cartTotal.classList.remove("d_none");
+        updateTotalPrice();
     }
 }
 
 function addToCart(index) {
-    disableEmptyCart();
+    
     let pizza = pizzas[index];
     if (pizza.quantity > 0) {
         pizza.quantity++;
@@ -56,6 +42,7 @@ function addToCart(index) {
         pizza.quantity = 1;
         cartItems.innerHTML += addItemToCart(pizza, index);
     }
+    toggleEmptyCart();
     updateTotalPrice();
 }
 
@@ -66,7 +53,7 @@ function removeItem(itemNumber) {
     pizza.quantity = 0;
     addedItem.remove();
     updateTotalPrice();
-    enableEmptyCart();
+    toggleEmptyCart();
 }
 
 function addOne(itemNumber) {

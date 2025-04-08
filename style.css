@@ -12,14 +12,15 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: auto;
     background-color: #f46105;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     padding: 24px;
-    margin: 8px;
     height: 104px;
+    max-width: 1920px;
 }
 
 .logo {
@@ -400,8 +401,8 @@ footer {
 
     .empty-cart{
         margin-top: 48px;
-        height: 32vh;
-        padding-top: 13vh;
+        height: 80vh;
+        padding-top: 32vh;
         width: 80%;
     }
 
@@ -410,7 +411,7 @@ footer {
     }
 
     #cart-contents {
-        height: 50%;
+        height: 96%;
         transition: top 0.5s ease-in-out;
         top: 100%;
         width: calc(100% - 32px) !important;
@@ -427,7 +428,7 @@ footer {
     }
 
     #cart-contents.visible {
-        top: 48%;
+        top: 2%;
     }
 
     #cart-items-container {
@@ -468,10 +469,6 @@ footer {
         height: 224px;
     }
 
-    .empty-cart {
-        margin-top: 24px;
-        height: 32vh;
-    }
 
     #links ul {
         flex-direction: column;
@@ -482,10 +479,6 @@ footer {
 @media (max-width: 550px) {
     .logo {
         width: 72px;
-    }
-
-    .empty-cart{
-        padding-top: 8vh;
     }
 
     .restaurant-description p{
@@ -512,11 +505,4 @@ footer {
         font-size: 14px;
     }
 
-    #cart-contents{
-        height: 40%;
-    }
-
-    #cart-contents.visible {
-        top: 58%;
-    }
 }

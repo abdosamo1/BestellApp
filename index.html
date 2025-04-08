@@ -27,14 +27,14 @@
         <a href="mailto: abdo.samo1@gmail.com">Contact</a>
     </div>
     <nav id="navbar">
-        <a class="cart-icon" onclick="toggleCart()">
+        <a class="cart-icon cart" onclick="toggleVisibility(cart)">
             <i class="material-icons">shopping_cart</i>
         </a>
-        <a class="icon menu-icon" onclick="toggleNavBar()">
+        <a class="icon menu-icon" onclick="toggleVisibility(navbar)">
             <i class="material-icons">menu</i>
         </a>
         <div id="links">
-            <a onclick="toggleNavBar()"><i class="material-icons">close</i></a>
+            <a onclick="toggleVisibility(navbar)"><i class="material-icons">close</i></a>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -57,7 +57,7 @@
     </div>
     <div id="cart-contents">
         <h2>Dein Warenkorb</h2>
-        <a onclick="toggleCart()"><i class="material-icons cart-close-btn">close</i></a>
+        <a onclick="toggleVisibility(cart)"><i class="material-icons cart-close-btn">close</i></a>
         <p class="empty-cart" id="empty-cart"> Dein Warenkorb ist noch leer,
             <br> wähle leckere gerichte und geniesse dein Essen! </p>
         <div id="cart-items-container"></div>
