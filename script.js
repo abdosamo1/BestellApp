@@ -1,6 +1,7 @@
-let cartItems = document.getElementById("cart-items-container")
+let cartItems = document.getElementById("cart-items-container");
 let navbar = document.getElementById("links");
-let cart = document.getElementById("cart-contents")
+let cart = document.getElementById("cart-contents");
+let cartBtn = document.getElementById("sticky-mobile-cart");
 
 function displayPizzas() {
     let restaurantMenu = document.getElementById("restaurant-menu");
@@ -13,8 +14,9 @@ function renderRestaurantMenu() {
     displayPizzas()
 }
 
-function toggleVisibility(toggleItem) {
+function toggleVisibility(toggleItem, event) {
     toggleItem.classList.toggle("visible");
+    event.stopPropagation();
 }
 
 function toggleEmptyCart() {
