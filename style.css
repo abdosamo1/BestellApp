@@ -158,7 +158,6 @@ h1 {
 
 h2 {
     color: #f46105;
-    font-weight: 100;
     font-size: 24px;
     text-align: left;
 }
@@ -282,8 +281,73 @@ h2 {
 .total-price {
     display: flex;
     justify-content: space-between;
-    font-size: 24px;
+    font-size: 16px;
     color: white;
+}
+
+.preis-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.preis-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#order-btn{
+    background: white;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#ordered-overlay{
+    background: #f46105;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.5s ease-in-out;
+}
+
+#ordered-overlay.visible{
+    display: flex;
+}
+
+.ordered-message{
+    width: 80%;
+    height: 80%;
+    color: black;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: background 0.5s ease-in-out;
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.ordered-message-header{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    position: fixed;
+    top: 14%;
 }
 
 #sticky-mobile-cart{
@@ -448,8 +512,9 @@ footer {
     #cart-contents {
         height: 100%;
         border-radius: 0;
-        transition: top 0.5s ease-in-out;
-        top: 100%;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out;
+        top: 0;
         left: 0;
         margin-left: 0 !important;
         z-index: 100;
@@ -465,7 +530,7 @@ footer {
     }
 
     #cart-contents.visible {
-        top: 0;
+        transform: translateY(0);
         width: 100%;
     }
 
@@ -511,7 +576,6 @@ footer {
         flex-direction: column;
     }
 }
-
 
 @media (max-width: 550px) {
     .logo {

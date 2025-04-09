@@ -1,7 +1,7 @@
 let cartItems = document.getElementById("cart-items-container");
 let navbar = document.getElementById("links");
 let cart = document.getElementById("cart-contents");
-let cartBtn = document.getElementById("sticky-mobile-cart");
+let orderedOverlay = document.getElementById("ordered-overlay")
 
 function displayPizzas() {
     let restaurantMenu = document.getElementById("restaurant-menu");
@@ -14,22 +14,24 @@ function renderRestaurantMenu() {
     displayPizzas()
 }
 
-function toggleVisibility(toggleItem, event) {
+function toggleVisibility(toggleItem) {
     toggleItem.classList.toggle("visible");
-    event.stopPropagation();
 }
 
 function toggleEmptyCart() {
     let emptyCart = document.getElementById("empty-cart");
     let cartTotal = document.getElementById("cart-total");
+    let orderBtn = document.getElementById("order-btn");
     let cartItemsAmount = cartItems.children.length;
 
     if (cartItemsAmount === 0) {
         emptyCart.classList.remove("d_none");
         cartTotal.classList.add("d_none");
+        orderBtn.classList.add("d_none");
     } else {
         emptyCart.classList.add("d_none");
         cartTotal.classList.remove("d_none");
+        orderBtn.classList.remove("d_none");
         updateTotalPrice();
     }
 }
@@ -107,5 +109,31 @@ function calculateTotal() {
 
 function updateTotalPrice() {
     let totalPriceElement = document.getElementById("total-price-amount");
-    totalPriceElement.innerHTML = calculateTotal() + " €";
+    let totalPreis = document.getElementById("preis-with-delivery-fee");
+    let total = parseFloat(calculateTotal()); 
+
+    totalPriceElement.innerHTML = total.toFixed(2) + " €";
+    totalPreis.innerHTML = (total + 5.00).toFixed(2) + " €";
+}
+
+function orderCompleted() {
+    
+    for (let pizza of pizzas) {
+        pizza.quantity = 0;
+    }
+    
+    cartItems.innerHTML = '';
+    
+    toggleEmptyCart();
+    updateTotalPrice();
+    
+    toggleVisibility(orderedOverlay); 
+    
+    if (cart.classList.contains("visible")) {
+        toggleVisibility(cart);
+    }
+}
+
+function orderedMessage() {
+    toggleVisibility(orderedOverlay);
 }

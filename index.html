@@ -11,7 +11,15 @@
     <!--! Page icon -->
     <link rel="icon" type="image/x-icon" href="./images/Favicon/favicon.ico">
 
+    <!--! icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!--! font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
     <title>BestellApp</title>
 </head>
@@ -64,17 +72,44 @@
         <div id="cart-total" class="cart-total d_none">
             <hr>
             <div class="total-price">
-                <span>Gesamt:</span>
-                <span id="total-price-amount">0.00 €</span>
+                <div class="preis-left">
+                    <span>Zwischensumme: </span>
+                    <span>Liefergebühr:</span>
+                    <br>
+                    <span>Gesamt:</span>
+                </div>
+                <div class="preis-right">
+                    <span id="total-price-amount">0.00 €</span>
+                    <span>5.00 € </span>
+                    <br>
+                    <span id="preis-with-delivery-fee">0.00 €</span>
+                </div>
+            </div>
+        </div>
+        <div id="order-btn" class="d_none" onclick="orderedMessage()">
+            <p>Jetzt Bestellen!</p>
+        </div>
+        <div id="ordered-overlay" class="d_none">
+            <div class="ordered-message">
+                <div class="ordered-message-header">
+
+                    <a href="#home" onclick="orderCompleted()">
+                        <i class="material-icons">home</i>
+                    </a>
+                    <a onclick="orderCompleted()">
+                        <i class="material-icons">close</i>
+                    </a>
+
+                </div>
+                <p>Dein Essen wurde erfolgreich bestellt!</p>
             </div>
         </div>
     </div>
     <div id="sticky-mobile-cart">
         <div class="sticky-btn" onclick="toggleVisibility(cart);">
-        <p> Dein Warenkorb </p>
-            <a class="cart-icon cart" onclick="toggleVisibility(cart, onclick())">
-                <i class="material-icons">shopping_cart</i>
-            </a>
+            <p> Dein Warenkorb </p>
+            <i class="material-icons">shopping_cart</i>
+
         </div>
     </div>
 </main>
